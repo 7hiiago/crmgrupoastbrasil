@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 228 10% 7%;
+    --foreground: 228 10% 91%;
+    --card: 228 10% 10%;
+    --card-foreground: 228 10% 91%;
+    --popover: 228 10% 10%;
+    --popover-foreground: 228 10% 91%;
+    --primary: 4 65% 47%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 228 8% 13%;
+    --secondary-foreground: 228 10% 91%;
+    --muted: 228 8% 16%;
+    --muted-foreground: 228 5% 50%;
+    --accent: 228 8% 16%;
+    --accent-foreground: 228 10% 91%;
+    --destructive: 4 65% 47%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 228 7% 20%;
+    --input: 228 7% 20%;
+    --ring: 4 65% 47%;
+    --radius: 0.375rem;
+
+    --ast-red: 4 65% 47%;
+    --ast-red-dark: 4 65% 36%;
+    --ast-bg: 228 10% 7%;
+    --ast-bg2: 228 10% 10%;
+    --ast-bg3: 228 8% 13%;
+    --ast-bg4: 228 7% 16%;
+    --ast-border: 228 7% 20%;
+    --ast-border2: 228 6% 25%;
+    --ast-text: 228 10% 91%;
+    --ast-text2: 228 3% 62%;
+    --ast-text3: 228 4% 37%;
+    --ast-green: 145 52% 42%;
+    --ast-amber: 28 80% 52%;
+    --ast-blue: 204 56% 44%;
+    --ast-purple: 271 48% 47%;
+
+    --sidebar-width: 240px;
+    --header-height: 56px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Barlow', sans-serif;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(var(--ast-border2)); border-radius: 3px; }
+
+/* Font utilities */
+.font-condensed { font-family: 'Barlow Condensed', sans-serif; }
