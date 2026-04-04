@@ -41,9 +41,8 @@ export interface Cliente {
   cidade: string;
   end: string;
   obs: string;
-  // ── NOVO: parceiro que indicou o cliente ──
-  indicacaoNome: string;   // nome do parceiro/arquiteto
-  indicacaoId: string;     // id do parceiro (se cadastrado)
+  indicacaoNome: string;
+  indicacaoId: string;
 }
 
 export interface HistoricoEntry {
@@ -72,8 +71,7 @@ export interface Negociacao {
   obs: string;
   anexos: Anexo[];
   historico: HistoricoEntry[];
-  // ── NOVO: comissionamento ──
-  indicacaoNome: string;   // parceiro que originou (herdado do cliente)
+  indicacaoNome: string;
   indicacaoId: string;
 }
 
@@ -100,7 +98,6 @@ export interface Recorrente {
   status: 'ativo' | 'pausado' | 'cancelado';
   obs: string;
   anexos: Anexo[];
-  // ── NOVO: comissionamento ──
   indicacaoNome: string;
   indicacaoId: string;
 }
@@ -118,9 +115,8 @@ export interface Lead {
   prospectadorNome: string;
   data: string;
   obs: string;
-  // ── NOVO: tipo de conversão e indicação ──
-  tipoProjeto: 'negociacao' | 'recorrente';  // define para onde vai ao converter
-  indicacaoNome: string;                      // parceiro que indicou
+  tipoProjeto: 'negociacao' | 'recorrente';
+  indicacaoNome: string;
   indicacaoId: string;
 }
 
@@ -146,6 +142,8 @@ export interface Produto {
   ativo: boolean;
   estoque: number;
   localEstoque: 'estoque' | 'centro_distribuicao' | 'escritorio';
+  // ── NOVO: custo de instalação por unidade ──
+  custoInstalacao: number;
 }
 
 export interface Servico {
@@ -209,7 +207,5 @@ export interface Tarefa {
   lembrete?: boolean;
 }
 
-// ── Comissionamento calculado ──────────────────────────────────────────────
-// Produto: 5% | Serviço: 10%
 export const COMISSAO_PRODUTO = 0.05;
 export const COMISSAO_SERVICO = 0.10;
